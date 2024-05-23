@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            background-color: #F2E2CE;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #E5784E;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h2 {
+            color: #401F13;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            color: #FFFFFF;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #9FBFAD;
+            color: #401F13;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .volver {
+            margin-top: 20px;
+        }
+        .volver input[type="submit"] {
+            background-color: #F29985;
+            color: #401F13;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .Sesion {
+            margin-top: 20px;
+        }
+        .Sesion input[type="submit"] {
+            background-color: #9FBFAD;
+            color: #401F13;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form action="validar.php" method="post">
+            <div class="form-group">
+                <label for="nombre2">Nombre:</label>
+                <input type="text" id="nombre2" name="nombre2" placeholder="USUARIO" required>
+            </div>
+            <div class="form-group">
+                <label for="password2">Contraseña:</label>
+                <input type="password" id="password2" name="password2" placeholder="CONTRASEÑA" required>
+                
+            </div>
+        <div>
+            <input type="submit" name="validar" value="Inicio de Sesion">
+        </div>
+        <div class="volver">
+                <input type="submit" name="volver" value="Volver a Inicio">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

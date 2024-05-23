@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abarrotes Rosy</title>
+    <style>
+
+        body
+        {
+            background-color: #F2E0C9;
+            margin:0px;
+            padding:0px;
+        }
+        
+        #header {
+            margin:auto;
+            width:500px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        
+        ul, ol {
+            list-style:none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav > li {
+            float:left;
+            position: relative;
+        }
+        
+        .nav li a {
+            background-color: #E5784E;
+            color:#401F13;
+            text-decoration:none;
+            padding:10px 12px;
+            display:block;
+        }
+        
+        .nav li a:hover {
+            background-color:#9FBFAD;
+        }
+        
+        .nav li ul {
+            display:none;
+            position:absolute;
+            min-width:140px;
+            left: 0;
+        }
+        
+        .nav li:hover > ul {
+            display:block;
+        }
+        
+        .nav li ul li {
+            position:relative;
+        }
+        
+        .nav li ul li ul {
+            left: 100%;
+            top: 0;
+        }
+        
+        .Titulo {
+            color: #401F13;
+            text-align: center ;
+            background-color: #F29985 ;
+            font-family:Verdana, Geneva, Tahoma, sans-serif  ;
+            font-size: 25px ;
+            width: 100%;
+            height: 145px ;
+            padding: 10px ;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav{
+            position: relative;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #E5784E;
+            padding: 2px;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a{
+            color: #401F13;
+            margin: 0 2 rem;
+            text-decoration: none;
+
+        }
+
+        #PiePag{
+            background-color: #E5784E ;
+            color: #401F13;
+            padding: 10px;
+            text-align: center;
+            font-size: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 50px ;
+        }
+
+        #PrimerText {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #401F13;
+            font-size: 20px;
+            background-color: #D3DDDA;
+            border: 5px solid #EFB560;
+            margin: auto;
+            padding: 1em;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+        #SecondText{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #401F13;
+            font-size: 20px;
+            background-color: #D3DDDA;
+            border: 5px solid #EFB560;
+            margin: auto;
+            padding:1em;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+       
+
+    </style>
+ 
+</head>
+<body>
+    
+
+    <div class="Titulo">
+        <h1>AbarrotesRosy  
+            <img src="LogoIn.png" alt="Logo" width="150" height="150"></h1>
+    </div>
+
+    <nav>
+        <div id="header">
+            <ul class="nav">
+                <li><a href="Index.html" onclick="loadPage('inicio.html')">Inicio</a></li>
+                <li><a href="#">Productos</a>
+                    <ul>
+                        <li><a href="Merceria.html" onclick="loadPage('Merceria.html')">Mercería</a></li>
+                        <li><a href="frutas_verduras.html" onclick="loadPage('frutas_verduras.html')">Frutas y Verduras</a></li>
+                        <li><a href="#" onclick="loadPage('alimentos.html')">Alimentos</a></li>
+                        <li><a href="#" onclick="loadPage('carniceria.html')">Carnicería</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Admin</a>
+                    <ul>
+                        <li><a href="InicioSesion.html" onclick="loadPage('empleado.html')">Empleado</a></li>
+                        <li><a href="InicioSesion.html" onclick="loadPage('usuario.html')">Usuario</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <br>
+
+    <div id="PrimerText">
+        <h1> Bienvenidos </h1>
+        <br>
+        <p>
+            En nuestra tienda pueden encontrar una gran variedad de Articulos de diferentes categorias. 
+            venga y aproveche los beneficios que tenemos para ofrecerle
+        </p>
+        <center><img src="Tiendita1.jfif" alt="Tiendita1" width="300" height="300"></center>
+    </div>
+    <br>
+  
+        
+
+    <div id="PiePag"> 
+        <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Telefono: 81********
+            <br>
+            Facebook: AbarrotesRosy
+            <br>
+            Correo Electronico: rosyabb@gmail.com
+        </p>
+        </section>
+    </div>
+    
+
+
+
+    <script>
+        function loadPage(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('content').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar la página:', error));
+        }
+    </script>
+
+
+</body>
+</html>
+

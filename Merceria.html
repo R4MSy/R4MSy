@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercería - Abarrotes Rosy</title>
+    <style>
+        body {
+            background-color: #F2E0C9;
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .Titulo {
+            color: #401F13;
+            text-align: center;
+            background-color: #F29985;
+            font-size: 25px;
+            width: 100%;
+            height: 145px;
+            padding: 10px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            position: relative;
+            font-size: 2rem;
+            font-weight: bold;
+            background-color: #E5784E;
+            padding: 2px;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a {
+            color: #401F13;
+            margin: 0 2rem;
+            text-decoration: none;
+        }
+
+        .productos {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .producto {
+            background-color: #D3DDDA;
+            border: 5px solid #EFB560;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .producto img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .producto h3 {
+            color: #401F13;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .producto p {
+            color: #401F13;
+            font-size: 16px;
+        }
+
+        #PiePag {
+            background-color: #E5784E;
+            color: #401F13;
+            padding: 10px;
+            text-align: center;
+            font-size: 15px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Titulo">
+        <h1>Mercería</h1>
+    </div>
+
+    <nav>
+        <a href="Index.html" onclick="loadPage('inicio.html')">Inicio</a>
+        <a href="#" onclick="loadPage('productos.html')">Productos</a>
+        <a href="#" onclick="loadPage('admin.html')">Admin</a>
+    </nav>
+
+    <div class="productos">
+        <div class="producto">
+            <img src="Hilo.jpg" alt="Producto 1">
+            <h3>Hilo de Coser</h3>
+            <p>Precio: $10.00</p>
+        </div>
+        <div class="producto">
+            <img src="Agujas.webp" alt="Producto 2">
+            <h3>Agujas</h3>
+            <p>Precio: $5.00</p>
+        </div>
+        <div class="producto">
+            <img src="Tijeras.webp" alt="Producto 3">
+            <h3>Tijeras</h3>
+            <p>Precio: $25.00</p>
+        </div>
+        <div class="producto">
+            <img src="Botones.jpg" alt="Producto 4">
+            <h3>Botones</h3>
+            <p>Precio: $2.00</p>
+        </div>
+       
+    </div>
+
+    <div id="PiePag"> 
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Teléfono: 81********<br>
+               Facebook: AbarrotesRosy<br>
+               Correo Electrónico: rosyabb@gmail.com
+            </p>
+        </section>
+    </div>
+
+    <script>
+        function loadPage(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('content').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar la página:', error));
+        }
+    </script>
+</body>
+</html>

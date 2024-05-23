@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Frutas y Verduras - Abarrotes Rosy</title>
+    <style>
+        body {
+            background-color: #F2E0C9;
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .Titulo {
+            color: #401F13;
+            text-align: center;
+            background-color: #F29985;
+            font-size: 25px;
+            width: 100%;
+            height: 145px;
+            padding: 10px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            position: relative;
+            font-size: 2rem;
+            font-weight: bold;
+            background-color: #E5784E;
+            padding: 2px;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a {
+            color: #401F13;
+            margin: 0 2rem;
+            text-decoration: none;
+        }
+
+        .productos {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .producto {
+            background-color: #D3DDDA;
+            border: 5px solid #EFB560;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .producto img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .producto h3 {
+            color: #401F13;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .producto p {
+            color: #401F13;
+            font-size: 16px;
+        }
+
+        #PiePag {
+            background-color: #E5784E;
+            color: #401F13;
+            padding: 10px;
+            text-align: center;
+            font-size: 15px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Titulo">
+        <h1>Mercería</h1>
+    </div>
+
+    <nav>
+        <a href="Index.html" onclick="loadPage('inicio.html')">Inicio</a>
+        <a href="#" onclick="loadPage('productos.html')">Productos</a>
+        <a href="#" onclick="loadPage('admin.html')">Admin</a>
+    </nav>
+
+    <div class="productos">
+        <div class="producto">
+            <img src="Sandia.jfif" alt="Producto 1">
+            <h3>Sandia</h3>
+            <p>Precio: $10.95</p>
+        </div>
+        <div class="producto">
+            <img src="Melon.jfif" alt="Producto 2">
+            <h3>Melon</h3>
+            <p>Precio: $33.90</p>
+        </div>
+        <div class="producto">
+            <img src="Manzana.jpg" alt="Producto 3">
+            <h3>Manzana</h3>
+            <p>Precio: $49.00</p>
+        </div>
+        <div class="producto">
+            <img src="uvas.jpg" alt="Producto 4">
+            <h3>Uvas</h3>
+            <p>Precio: $186.00</p>
+        </div>
+
+        <div class="producto">
+            <img src="Fresas.jpg" alt="Producto 5">
+            <h3>Fresas</h3>
+            <p>Precio: $59.00</p>
+        </div>
+        <div class="producto">
+            <img src="Mango.jpg" alt="Producto 6">
+            <h3>Mango</h3>
+            <p>Precio: $72.00</p>
+        </div>
+        <div class="producto">
+            <img src="Patata.webp" alt="Producto 7">
+            <h3>Papa</h3>
+            <p>Precio: $49.00</p>
+        </div>
+        <div class="producto">
+            <img src="broccoli.jpg" alt="Producto 8">
+            <h3>Brocoli</h3>
+            <p>Precio: $41.00</p>
+        </div>
+
+        <div class="producto">
+            <img src="cilantro.jpg" alt="Producto 9">
+            <h3>Cilantro</h3>
+            <p>Precio: $9.00</p>
+        </div>
+        <div class="producto">
+            <img src="Aguacate.png" alt="Producto 10">
+            <h3>Aguacate</h3>
+            <p>Precio: $41.00</p>
+        </div>
+        <div class="producto">
+            <img src="Lechuga.jpg" alt="Producto 11">
+            <h3>Lechuga</h3>
+            <p>Precio: $20.00</p>
+        </div>
+        <div class="producto">
+            <img src="Cebolla.jpg" alt="Producto 12">
+            <h3>Cebolla</h3>
+            <p>Precio: $24.00</p>
+        </div>
+       
+    </div>
+
+    <div id="PiePag"> 
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Teléfono: 81********<br>
+               Facebook: AbarrotesRosy<br>
+               Correo Electrónico: rosyabb@gmail.com
+            </p>
+        </section>
+    </div>
+
+    <script>
+        function loadPage(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('content').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar la página:', error));
+        }
+    </script>
+</body>
+</html>
